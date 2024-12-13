@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tracker/common/color_extensions.dart';
 import 'package:tracker/common_widget/primaryButton.dart';
 import 'package:tracker/common_widget/secondaryButton.dart';
+import 'package:tracker/views/login/sign_up_view.dart';
 
 class SocialLoginView extends StatefulWidget {
   const SocialLoginView({super.key});
@@ -147,7 +148,9 @@ class _SocialLoginViewState extends State<SocialLoginView> {
               SizedBox(
                 height: 15,
               ),
-              Secondarybutton(title: "Sign up with E-mail", onPressed: () {}),
+              Secondarybutton(title: "Sign up with E-mail", onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpView()));
+              }),
               SizedBox(
                 height: 10,
               ),
