@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:tracker/common/color_extensions.dart';
 import 'package:tracker/common_widget/primaryButton.dart';
 import 'package:tracker/common_widget/secondaryButton.dart';
+import 'package:tracker/views/login/social_login.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});
@@ -61,7 +62,14 @@ class _WelcomeViewState extends State<WelcomeView> {
                   SizedBox(height: 30,),
 
                   PrimaryButton(
-                    onPressed: (){},title: "Get Started",
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SocialLoginView(),
+                        ),
+                      );
+                    },title: "Get Started",
                   ),
                   
                   SizedBox(height: 15,),
