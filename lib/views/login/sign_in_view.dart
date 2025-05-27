@@ -3,16 +3,16 @@ import 'package:tracker/common/color_extensions.dart';
 import 'package:tracker/common_widget/primaryButton.dart';
 import 'package:tracker/common_widget/rounded_text_field.dart';
 import 'package:tracker/common_widget/secondaryButton.dart';
-import 'package:tracker/views/login/sign_in_view.dart';
+import 'package:tracker/views/login/sign_up_view.dart';
 
-class SignUpView extends StatefulWidget {
-  const SignUpView({super.key});
+class SignInView extends StatefulWidget {
+  const SignInView({super.key});
 
   @override
-  State<SignUpView> createState() => _SignUpViewState();
+  State<SignInView> createState() => _SignInViewState();
 }
 
-class _SignUpViewState extends State<SignUpView> {
+class _SignInViewState extends State<SignInView> {
   TextEditingController txtEmail = TextEditingController();
   TextEditingController txtPass = TextEditingController();
   @override
@@ -52,50 +52,6 @@ class _SignUpViewState extends State<SignUpView> {
               SizedBox(
                 height: 17,
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: 5,
-                      margin: EdgeInsets.symmetric(horizontal: 1),
-                      decoration: BoxDecoration(
-                        color: TColor.gray70,
-                        //borderRadius: BorderRadius.circular(radius)
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      height: 5,
-                      margin: EdgeInsets.symmetric(horizontal: 1),
-                      decoration: BoxDecoration(
-                        color: TColor.gray70,
-                        //borderRadius: BorderRadius.circular(radius)
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      height: 5,
-                      margin: EdgeInsets.symmetric(horizontal: 1),
-                      decoration: BoxDecoration(
-                        color: TColor.gray70,
-                        //borderRadius: BorderRadius.circular(radius)
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      height: 5,
-                      margin: EdgeInsets.symmetric(horizontal: 1),
-                      decoration: BoxDecoration(
-                        color: TColor.gray70,
-                        //borderRadius: BorderRadius.circular(radius)
-                      ),
-                    ),
-                  ),
-                ],
-              ),
               SizedBox(
                 height: 10,
               ),
@@ -123,11 +79,11 @@ class _SignUpViewState extends State<SignUpView> {
                         ),
                       );*/
                 },
-                title: "Get Started, it's free!",
+                title: "Sign in",
               ),
               Spacer(),
               Text(
-                "Do you already have an account?",
+                "Don't have an account yet?",
                 style: TextStyle(
                   color: TColor.white,
                   fontSize: 14,
@@ -138,12 +94,12 @@ class _SignUpViewState extends State<SignUpView> {
                 height: 10,
               ),
               Secondarybutton(
-                  title: "Sign in",
+                  title: "Sign up",
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SignInView(),
+                        builder: (context) => SignUpView(),
                       ),
                     );
                   }),

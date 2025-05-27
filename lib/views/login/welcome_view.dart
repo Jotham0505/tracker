@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:tracker/common/color_extensions.dart';
 import 'package:tracker/common_widget/primaryButton.dart';
 import 'package:tracker/common_widget/secondaryButton.dart';
+import 'package:tracker/views/login/sign_in_view.dart';
 import 'package:tracker/views/login/social_login.dart';
 
 class WelcomeView extends StatefulWidget {
@@ -13,7 +14,6 @@ class WelcomeView extends StatefulWidget {
 }
 
 class _WelcomeViewState extends State<WelcomeView> {
-
   @override
   void initState() {
     // TODO: implement initState
@@ -34,18 +34,18 @@ class _WelcomeViewState extends State<WelcomeView> {
             height: media.height,
             fit: BoxFit.cover,
           ),
-          
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-              
                 children: [
-                 SizedBox(height: media.height*0.03,),
+                  SizedBox(
+                    height: media.height * 0.03,
+                  ),
                   Image.asset(
                     "assets/img/app_logo.png",
-                    width: media.width*0.5,
+                    width: media.width * 0.5,
                     //height: media.height,
                     fit: BoxFit.contain,
                   ),
@@ -58,23 +58,34 @@ class _WelcomeViewState extends State<WelcomeView> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-
-                  SizedBox(height: 30,),
-
+                  SizedBox(
+                    height: 30,
+                  ),
                   PrimaryButton(
-                    onPressed: (){
+                    onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => SocialLoginView(),
                         ),
                       );
-                    },title: "Get Started",
+                    },
+                    title: "Get Started",
                   ),
-                  
-                  SizedBox(height: 15,),
-
-                  Secondarybutton(title: "I have an account", onPressed: (){})
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Secondarybutton(
+                    title: "I have an account",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignInView(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
@@ -84,4 +95,3 @@ class _WelcomeViewState extends State<WelcomeView> {
     );
   }
 }
-
