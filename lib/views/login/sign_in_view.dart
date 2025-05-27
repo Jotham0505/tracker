@@ -15,6 +15,7 @@ class SignInView extends StatefulWidget {
 class _SignInViewState extends State<SignInView> {
   TextEditingController txtEmail = TextEditingController();
   TextEditingController txtPass = TextEditingController();
+  bool isRemeber = false;
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.sizeOf(context);
@@ -58,11 +59,36 @@ class _SignInViewState extends State<SignInView> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
-                    "Use 8 or more characters with a mis of letter's, \nnumbers & symbols",
-                    style: TextStyle(
-                      color: TColor.white,
-                      fontSize: 12,
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        isRemeber
+                            ? Icons.check_box_rounded
+                            : Icons.check_box_outline_blank,
+                        size: 15,
+                        color: TColor.gray50,
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                            color: TColor.white,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(
+                        color: TColor.white,
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                 ],
