@@ -11,8 +11,24 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.sizeOf(context);
     return Scaffold(
       backgroundColor: TColor.gray,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: media.width * 1.1,
+              decoration: BoxDecoration(
+                  color: TColor.gray70.withOpacity(0.5),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(25),
+                    bottomRight: Radius.circular(25),
+                  )),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
