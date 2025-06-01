@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tracker/common/color_extensions.dart';
 import 'package:tracker/views/comun.dart';
 import 'package:tracker/views/login/welcome_view.dart';
+import 'package:tracker/views/main_tab/main_tab_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
             secondary: TColor.secondary),
         useMaterial3: false,
       ),
-      home: WelcomeView(),
+      home: MainTabView(), // welcomeview
     );
   }
 }

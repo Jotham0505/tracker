@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tracker/common/color_extensions.dart';
+import 'package:tracker/views/home/home_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -9,12 +10,16 @@ class MainTabView extends StatefulWidget {
 }
 
 class _MainTabViewState extends State<MainTabView> {
+  int selectTab = 0;
+  PageStorageBucket pageStorageBucket = PageStorageBucket();
+  Widget currentTabView = HomeView();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: TColor.gray,
       body: Stack(
         children: [
+          PageStorage(bucket: pageStorageBucket, child: currentTabView),
           SafeArea(
             child: Column(
               children: [
@@ -29,19 +34,33 @@ class _MainTabViewState extends State<MainTabView> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                selectTab = 0;
+                                currentTabView = HomeView();
+                              });
+                            },
                             icon: Image.asset(
                               "assets/img/home.png",
                               width: 20,
                               height: 20,
+                              color:
+                                  selectTab == 0 ? TColor.white : TColor.gray,
                             ),
                           ),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                selectTab = 1;
+                                currentTabView = Container();
+                              });
+                            },
                             icon: Image.asset(
                               "assets/img/budgets.png",
                               width: 20,
                               height: 20,
+                              color:
+                                  selectTab == 1 ? TColor.white : TColor.gray,
                             ),
                           ),
                           SizedBox(
@@ -49,19 +68,33 @@ class _MainTabViewState extends State<MainTabView> {
                             height: 50,
                           ),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                selectTab = 2;
+                                currentTabView = Container();
+                              });
+                            },
                             icon: Image.asset(
                               "assets/img/calendar.png",
                               width: 20,
                               height: 20,
+                              color:
+                                  selectTab == 2 ? TColor.white : TColor.gray,
                             ),
                           ),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                selectTab = 3;
+                                currentTabView = Container();
+                              });
+                            },
                             icon: Image.asset(
                               "assets/img/creditcards.png",
                               width: 20,
                               height: 20,
+                              color:
+                                  selectTab == 3 ? TColor.white : TColor.gray,
                             ),
                           ),
                         ],
