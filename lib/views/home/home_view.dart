@@ -41,7 +41,9 @@ class _HomeViewState extends State<HomeView> {
                     child: InkWell(
                       onTap: () {},
                       child: Container(
+
                         decoration: BoxDecoration(
+                          border: Border.all(color: ),
                           color: TColor.gray60.withOpacity(0.2),
                           borderRadius: BorderRadius.circular(20),
                         ),

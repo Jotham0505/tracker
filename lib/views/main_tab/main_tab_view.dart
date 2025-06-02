@@ -108,20 +108,23 @@ class _MainTabViewState extends State<MainTabView> {
                           )
                         ],
                       ),
-                      Container(
-                        margin: EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: TColor.secondary.withOpacity(0.25),
-                                  blurRadius: 10,
-                                  offset: Offset(0, 4))
-                            ]),
-                        child: Image.asset(
-                          "assets/img/center_btn.png",
-                          width: 55,
-                          height: 55,
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          margin: EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: TColor.secondary.withOpacity(0.25),
+                                    blurRadius: 10,
+                                    offset: Offset(0, 4))
+                              ]),
+                          child: Image.asset(
+                            "assets/img/center_btn.png", // center button image asset
+                            width: 55,
+                            height: 55,
+                          ),
                         ),
                       )
                     ],
