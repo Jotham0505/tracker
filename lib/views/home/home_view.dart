@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tracker/common/color_extensions.dart';
+import 'package:tracker/common_widget/segmentButton.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -38,14 +39,10 @@ class _HomeViewState extends State<HomeView> {
               child: Row(
                 children: [
                   Expanded(
-                    child: InkWell(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: TColor.gray60.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
+                    child: segment_button(
+                      isActive: true,
+                      title: "Your Subscription",
+                      onPressed: () {},
                     ),
                   )
                 ],
