@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tracker/common/color_extensions.dart';
 import 'package:tracker/common_widget/segmentButton.dart';
+import 'package:tracker/common_widget/subscriptionHomeRow.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -10,6 +11,41 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  bool isSubscription = true;
+  List subArr = [
+    {"name": "Spotify", "icon": "assets/img/spotify_logo.png", "price": "5.99"},
+    {
+      "name": "YouTube Premium",
+      "icon": "assets/img/youtube_logo.png",
+      "price": "18.99"
+    },
+    {
+      "name": "Microsoft OneDrive",
+      "icon": "assets/img/onedrive_logo.png",
+      "price": "29.99"
+    },
+    {
+      "name": "NetFlix",
+      "icon": "assets/img/netflix_logo.png",
+      "price": "15.00"
+    },
+  ];
+
+  List bilArr = [
+    {"name": "Spotify", "date": DateTime(2023, 07, 25), "price": "5.99"},
+    {
+      "name": "YouTube Premium",
+      "date": DateTime(2023, 07, 25),
+      "price": "18.99"
+    },
+    {
+      "name": "Microsoft OneDrive",
+      "date": DateTime(2023, 07, 25),
+      "price": "29.99"
+    },
+    {"name": "NetFlix", "date": DateTime(2023, 07, 25), "price": "15.00"},
+  ];
+
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.sizeOf(context);
@@ -40,14 +76,41 @@ class _HomeViewState extends State<HomeView> {
                 children: [
                   Expanded(
                     child: segment_button(
-                      isActive: true,
+                      isActive: isSubscription,
                       title: "Your Subscription",
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          isSubscription = !isSubscription;
+                        });
+                      },
                     ),
-                  )
+                  ),
+                  Expanded(
+                    child: segment_button(
+                      isActive: !isSubscription,
+                      title: "Upcoming bills",
+                      onPressed: () {
+                        setState(() {
+                          isSubscription = !isSubscription;
+                        });
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
+            ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: subArr.length,
+                itemBuilder: (context, index) {
+                  var sObj = subArr[index] as Map ?? {};
+
+                  return SubscriptionHomeRow(
+                    sObj: sObj,
+                    onPressed: () {},
+                  );
+                }),
           ],
         ),
       ),

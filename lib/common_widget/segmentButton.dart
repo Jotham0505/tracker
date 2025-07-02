@@ -21,7 +21,7 @@ class segment_button extends StatelessWidget {
             ? BoxDecoration(
                 // decorations box
                 color: TColor.gray60.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: TColor.border.withOpacity(0.15)))
             : null,
         alignment: Alignment.center,
