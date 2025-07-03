@@ -100,6 +100,7 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             ListView.builder(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: subArr.length,
