@@ -58,7 +58,6 @@ class _HomeViewState extends State<HomeView> {
           children: [
             Container(
               height: media.width * 1.1,
-              padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: TColor.gray70.withOpacity(0.5),
                 borderRadius: BorderRadius.only(
@@ -67,17 +66,45 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
               child: Stack(
-                alignment: Alignment.bottomCenter,
+                alignment: Alignment.center,
                 children: [
-                  Row(
+                  Image.asset("assets/img/home_bg.png"),
+                  Column(
                     children: [
-                      Expanded(
-                        child: Statusbutton(
-                          title: 'Active subs',
-                          onPressed: () {},
-                          statuscolor: TColor.secondary,
-                          value: '12',
-                        ),
+                      Spacer(),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Statusbutton(
+                              title: 'Active subs',
+                              onPressed: () {},
+                              statuscolor: TColor.secondary,
+                              value: '12',
+                            ),
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Expanded(
+                            child: Statusbutton(
+                              title: 'Highest subs',
+                              onPressed: () {},
+                              statuscolor: TColor.primary10,
+                              value: '\$19.99',
+                            ),
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Expanded(
+                            child: Statusbutton(
+                              title: 'Lowest subs',
+                              onPressed: () {},
+                              statuscolor: TColor.secondaryG,
+                              value: '\$5.99',
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   )

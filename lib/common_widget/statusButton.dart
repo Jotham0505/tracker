@@ -28,13 +28,14 @@ class Statusbutton extends StatelessWidget {
               decoration: BoxDecoration(
                 // decorations box
                 color: TColor.gray60.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(14),
                 border: Border.all(
                   color: TColor.border.withOpacity(0.15),
                 ),
               ),
               alignment: Alignment.center,
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     title,
