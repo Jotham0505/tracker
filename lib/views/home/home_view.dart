@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tracker/common/color_extensions.dart';
 import 'package:tracker/common_widget/segmentButton.dart';
 import 'package:tracker/common_widget/subscriptionHomeRow.dart';
+import 'package:tracker/common_widget/upcomingBillHomeRow.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -99,19 +100,23 @@ class _HomeViewState extends State<HomeView> {
                 ],
               ),
             ),
-            ListView.builder(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: subArr.length,
-                itemBuilder: (context, index) {
-                  var sObj = subArr[index] as Map ?? {};
+            if (!isSubscription)
+              ListView.builder(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: subArr.length,
+                  itemBuilder: (context, index) {
+                    var sObj = subArr[index] as Map ?? {};
 
-                  return SubscriptionHomeRow(
-                    sObj: sObj,
-                    onPressed: () {},
-                  );
-                }),
+                    return Upcomingbillhomerow(
+                      sObj: sObj,
+                      onPressed: () {},
+                    );
+                  }),
+            SizedBox(
+              height: 110,
+            ),
           ],
         ),
       ),

@@ -1,16 +1,11 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:tracker/common/color_extensions.dart';
 
-class SubscriptionHomeRow extends StatelessWidget {
+class Upcomingbillhomerow extends StatelessWidget {
   final Map sObj;
   final VoidCallback onPressed;
-  const SubscriptionHomeRow({
-    super.key,
-    required this.sObj,
-    required this.onPressed,
-  });
+  const Upcomingbillhomerow(
+      {super.key, required this.sObj, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +18,42 @@ class SubscriptionHomeRow extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           height: 64,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: TColor.border.withOpacity(0.15))),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: TColor.border.withOpacity(0.15),
+            ),
+          ),
           alignment: Alignment.center,
           child: Row(
             children: [
-              Image.asset(
-                sObj["icon"],
-                width: 40,
+              Container(
+                padding: const EdgeInsets.all(4),
                 height: 40,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: TColor.gray70.withOpacity(0.5),
+                ),
+                alignment: Alignment.center,
+                child: Column(
+                  children: [
+                    Text(
+                      "Jun",
+                      style: TextStyle(
+                        color: TColor.gray30,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "Jun",
+                      style: TextStyle(
+                        color: TColor.gray30,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
                 width: 8,
