@@ -29,6 +29,7 @@ class Upcomingbillhomerow extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(4),
                 height: 40,
+                width: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: TColor.gray70.withOpacity(0.5),
@@ -45,7 +46,7 @@ class Upcomingbillhomerow extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "Jun",
+                      "25",
                       style: TextStyle(
                         color: TColor.gray30,
                         fontSize: 14,

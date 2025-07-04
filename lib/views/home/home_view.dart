@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tracker/common/color_extensions.dart';
 import 'package:tracker/common_widget/segmentButton.dart';
+import 'package:tracker/common_widget/statusButton.dart';
 import 'package:tracker/common_widget/subscriptionHomeRow.dart';
 import 'package:tracker/common_widget/upcomingBillHomeRow.dart';
 
@@ -57,12 +58,30 @@ class _HomeViewState extends State<HomeView> {
           children: [
             Container(
               height: media.width * 1.1,
+              padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: TColor.gray70.withOpacity(0.5),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(25),
                   bottomRight: Radius.circular(25),
                 ),
+              ),
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Statusbutton(
+                          title: 'Active subs',
+                          onPressed: () {},
+                          statuscolor: TColor.secondary,
+                          value: '12',
+                        ),
+                      ),
+                    ],
+                  )
+                ],
               ),
             ),
             Container(
