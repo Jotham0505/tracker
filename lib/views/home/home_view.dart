@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tracker/common/color_extensions.dart';
+import 'package:tracker/common_widget/customArc.dart';
 import 'package:tracker/common_widget/segmentButton.dart';
 import 'package:tracker/common_widget/statusButton.dart';
 import 'package:tracker/common_widget/subscriptionHomeRow.dart';
@@ -69,6 +70,13 @@ class _HomeViewState extends State<HomeView> {
                 alignment: Alignment.center,
                 children: [
                   Image.asset("assets/img/home_bg.png"),
+                  Container(
+                    width: media.width * 0.9,
+                    height: media.width * 0.9,
+                    child: CustomPaint(
+                      painter: CustomArcPainter(),
+                    ),
+                  ),
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
