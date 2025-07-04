@@ -18,9 +18,9 @@ class CustomArcPainter extends CustomPainter {
     activePaint.strokeWidth = 15;
     activePaint.strokeCap = StrokeCap.round;
 
-    Paint backgroundPaint = Paint()..shader = gradientColor.createShader(rect);
+    Paint backgroundPaint = Paint();
 
-    backgroundPaint.color = TColor.gray30;
+    backgroundPaint.color = TColor.gray60.withOpacity(0.5);
     backgroundPaint.style = PaintingStyle.stroke;
     backgroundPaint.strokeWidth = 15;
     backgroundPaint.strokeCap = StrokeCap.round;

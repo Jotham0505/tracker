@@ -71,8 +71,9 @@ class _HomeViewState extends State<HomeView> {
                 children: [
                   Image.asset("assets/img/home_bg.png"),
                   Container(
-                    width: media.width * 0.9,
-                    height: media.width * 0.9,
+                    padding: EdgeInsets.only(bottom: media.width * 0.07),
+                    width: media.width * 0.70,
+                    height: media.width * 0.70,
                     child: CustomPaint(
                       painter: CustomArcPainter(),
                     ),
@@ -87,7 +88,7 @@ class _HomeViewState extends State<HomeView> {
                         fit: BoxFit.contain,
                       ),
                       SizedBox(
-                        height: 15,
+                        height: media.width * 0.1,
                       ),
                       Text(
                         "\$1,235",
@@ -98,7 +99,7 @@ class _HomeViewState extends State<HomeView> {
                             fontWeight: FontWeight.w700),
                       ),
                       SizedBox(
-                        height: 15,
+                        height: media.width * 0.05,
                       ),
                       Text(
                         "This month bills",
@@ -109,7 +110,7 @@ class _HomeViewState extends State<HomeView> {
                             fontWeight: FontWeight.w600),
                       ),
                       SizedBox(
-                        height: 25,
+                        height: media.width * 0.05,
                       ),
                       InkWell(
                         onTap: () {},
