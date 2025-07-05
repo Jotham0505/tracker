@@ -25,6 +25,8 @@ class CustomArcPainter extends CustomPainter {
     backgroundPaint.strokeWidth = 15;
     backgroundPaint.strokeCap = StrokeCap.round;
 
+    Paint shadowPaint = Paint()..color = TColor.secondary.withOpacity(0.3);
+
     canvas.drawArc(rect, radians(135), radians(270), false, backgroundPaint);
     canvas.drawArc(rect, radians(135), radians(200), false, activePaint);
   }
