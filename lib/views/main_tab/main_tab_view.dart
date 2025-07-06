@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tracker/common/color_extensions.dart';
 import 'package:tracker/views/home/home_view.dart';
+import 'package:tracker/views/spending_budget_view/spending_budget_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -56,7 +57,7 @@ class _MainTabViewState extends State<MainTabView> {
                                 onPressed: () {
                                   setState(() {
                                     selectTab = 1;
-                                    currentTabView = Container();
+                                    currentTabView = SpendingBudgetView();
                                   });
                                 },
                                 icon: Image.asset(
