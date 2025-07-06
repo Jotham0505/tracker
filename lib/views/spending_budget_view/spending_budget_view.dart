@@ -6,14 +6,14 @@ import 'package:tracker/common_widget/statusButton.dart';
 import 'package:tracker/common_widget/subscriptionHomeRow.dart';
 import 'package:tracker/common_widget/upcomingBillHomeRow.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class SpendingBudgetView extends StatefulWidget {
+  const SpendingBudgetView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<SpendingBudgetView> createState() => _SpendingBudgetViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _SpendingBudgetViewState extends State<SpendingBudgetView> {
   bool isSubscription = true;
   List subArr = [
     {"name": "Spotify", "icon": "assets/img/spotify_logo.png", "price": "5.99"},
@@ -32,21 +32,6 @@ class _HomeViewState extends State<HomeView> {
       "icon": "assets/img/netflix_logo.png",
       "price": "15.00"
     },
-  ];
-
-  List bilArr = [
-    {"name": "Spotify", "date": DateTime(2023, 07, 25), "price": "5.99"},
-    {
-      "name": "YouTube Premium",
-      "date": DateTime(2023, 07, 25),
-      "price": "18.99"
-    },
-    {
-      "name": "Microsoft OneDrive",
-      "date": DateTime(2023, 07, 25),
-      "price": "29.99"
-    },
-    {"name": "NetFlix", "date": DateTime(2023, 07, 25), "price": "15.00"},
   ];
 
   @override
@@ -69,7 +54,6 @@ class _HomeViewState extends State<HomeView> {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  Image.asset("assets/img/home_bg.png"),
                   Container(
                     padding: EdgeInsets.only(bottom: media.width * 0.07),
                     width: media.width * 0.70,
@@ -83,12 +67,6 @@ class _HomeViewState extends State<HomeView> {
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Image.asset(
-                        "assets/img/app_logo.png",
-                        width: media.width * 0.28,
-                        //height: media.height,
-                        fit: BoxFit.contain,
-                      ),
                       SizedBox(
                         height: media.width * 0.1,
                       ),
@@ -181,69 +159,19 @@ class _HomeViewState extends State<HomeView> {
                 ],
               ),
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-              height: 50,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: segment_button(
-                      isActive: isSubscription,
-                      title: "Your Subscription",
-                      onPressed: () {
-                        setState(() {
-                          isSubscription = !isSubscription;
-                        });
-                      },
-                    ),
-                  ),
-                  Expanded(
-                    child: segment_button(
-                      isActive: !isSubscription,
-                      title: "Upcoming bills",
-                      onPressed: () {
-                        setState(() {
-                          isSubscription = !isSubscription;
-                        });
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            if (isSubscription)
-              ListView.builder(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 4),
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: subArr.length,
-                  itemBuilder: (context, index) {
-                    var sObj = subArr[index] as Map ?? {};
+            ListView.builder(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: subArr.length,
+                itemBuilder: (context, index) {
+                  var sObj = subArr[index] as Map ?? {};
 
-                    return SubscriptionHomeRow(
-                      sObj: sObj,
-                      onPressed: () {},
-                    );
-                  }),
-            if (!isSubscription)
-              ListView.builder(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 4),
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: subArr.length,
-                  itemBuilder: (context, index) {
-                    var sObj = subArr[index] as Map ?? {};
-
-                    return Upcomingbillhomerow(
-                      sObj: sObj,
-                      onPressed: () {},
-                    );
-                  }),
+                  return SubscriptionHomeRow(
+                    sObj: sObj,
+                    onPressed: () {},
+                  );
+                }),
             SizedBox(
               height: 110,
             ),
