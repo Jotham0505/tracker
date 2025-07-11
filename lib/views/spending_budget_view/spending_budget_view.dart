@@ -44,7 +44,7 @@ class _SpendingBudgetViewState extends State<SpendingBudgetView> {
   Widget build(BuildContext context) {
     var media = MediaQuery.sizeOf(context);
     return Scaffold(
-      backgroundColor: TColor.gray,
+      backgroundColor: TColor.gray, // color upgraded comment
       body: SingleChildScrollView(
         child: Column(
           children: [
