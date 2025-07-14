@@ -66,7 +66,7 @@ class Budgetsrow extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "\$${bObj["spend_amount"]}left to spend",
+                    "\$${bObj["spend_amount"]}",
                     style: TextStyle(
                       color: TColor.white,
                       fontSize: 14,
@@ -74,7 +74,7 @@ class Budgetsrow extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "of \$${bObj["total_budget"]}left to spend",
+                    "of \$${bObj["total_budget"]}",
                     style: TextStyle(
                       color: TColor.gray30,
                       fontSize: 12,
