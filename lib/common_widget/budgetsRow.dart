@@ -39,6 +39,7 @@ class Budgetsrow extends StatelessWidget {
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       bObj["name"],
@@ -47,6 +48,9 @@ class Budgetsrow extends StatelessWidget {
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),
+                    ),
+                    SizedBox(
+                      height: 2,
                     ),
                     Text(
                       "\$${bObj["left_amount"]}left to spend",
@@ -64,6 +68,7 @@ class Budgetsrow extends StatelessWidget {
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "\$${bObj["spend_amount"]}",
@@ -72,6 +77,9 @@ class Budgetsrow extends StatelessWidget {
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                     ),
+                  ),
+                  SizedBox(
+                    height: 2,
                   ),
                   Text(
                     "of \$${bObj["total_budget"]}",
