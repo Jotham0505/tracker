@@ -19,7 +19,7 @@ class _SpendingBudgetViewState extends State<SpendingBudgetView> {
       "icon": "assets/img/auto_&_transport.png",
       "spend_amount": "25.99",
       "total_budget": "400",
-      "left_amount": "374.01",
+      "left_amount": "250.01",
       "color": TColor.secondaryG
     },
     {
@@ -27,7 +27,7 @@ class _SpendingBudgetViewState extends State<SpendingBudgetView> {
       "icon": "assets/img/entertainment.png",
       "spend_amount": "50.99",
       "total_budget": "600",
-      "left_amount": "549.01",
+      "left_amount": "300.01",
       "color": TColor.secondary50
     },
     {
@@ -35,7 +35,7 @@ class _SpendingBudgetViewState extends State<SpendingBudgetView> {
       "icon": "assets/img/security.png",
       "spend_amount": "5.99",
       "total_budget": "600",
-      "left_amount": "594.01",
+      "left_amount": "250.01",
       "color": TColor.primary10
     }
   ];
@@ -48,19 +48,89 @@ class _SpendingBudgetViewState extends State<SpendingBudgetView> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(
+              height: 60,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(16),
+                onTap: () {},
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  height: 64,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      border:
+                          Border.all(color: TColor.border.withOpacity(0.01))),
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Your budgets are on track 🚀",
+                        style: TextStyle(
+                          color: TColor.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
             ListView.builder(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 65),
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: budgetArr.length,
-                itemBuilder: (context, index) {
-                  var bObj = budgetArr[index] as Map ?? {};
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: budgetArr.length,
+              itemBuilder: (context, index) {
+                var bObj = budgetArr[index] as Map ?? {};
 
-                  return Budgetsrow(
-                    bObj: bObj,
-                    onPressed: () {},
-                  );
-                }),
+                return Budgetsrow(
+                  bObj: bObj,
+                  onPressed: () {},
+                );
+              },
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(16),
+                onTap: () {},
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  height: 64,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      border:
+                          Border.all(color: TColor.border.withOpacity(0.01))),
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Add new category",
+                        style: TextStyle(
+                          color: TColor.gray40,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Image.asset(
+                        "assets/img/add.png",
+                        width: 12,
+                        height: 12,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
             SizedBox(
               height: 110,
             ),
