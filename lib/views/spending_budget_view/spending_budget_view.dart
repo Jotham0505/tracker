@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:tracker/common/color_extensions.dart';
 import 'package:tracker/common_widget/budgetsRow.dart';
@@ -95,38 +96,37 @@ class _SpendingBudgetViewState extends State<SpendingBudgetView> {
               },
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),// spending view comment
               child: InkWell(
                 borderRadius: BorderRadius.circular(16),
                 onTap: () {},
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  height: 64,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      border:
-                          Border.all(color: TColor.border.withOpacity(0.01))),
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Add new category",
-                        style: TextStyle(
-                          color: TColor.gray40,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
+                child: DottedBorder(
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    height: 64,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        border:
+                            Border.all(color: TColor.border.withOpacity(0.01))),
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Add new category ",
+                          style: TextStyle(
+                            color: TColor.gray40,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Image.asset(
-                        "assets/img/add.png",
-                        width: 12,
-                        height: 12,
-                      ),
-                    ],
+                        Image.asset(
+                          "assets/img/add.png",
+                          width: 12,
+                          height: 12,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
