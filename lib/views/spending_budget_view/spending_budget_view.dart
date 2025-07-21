@@ -69,10 +69,10 @@ class _SpendingBudgetViewState extends State<SpendingBudgetView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Your budgets are on track 🚀",
+                        "Your're budgets are on track 👍",
                         style: TextStyle(
                           color: TColor.white,
-                          fontSize: 14,
+                          fontSize: 18,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -96,7 +96,8 @@ class _SpendingBudgetViewState extends State<SpendingBudgetView> {
               },
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),// spending view comment
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 20, vertical: 8), // spending view comment
               child: InkWell(
                 borderRadius: BorderRadius.circular(16),
                 onTap: () {},
@@ -120,10 +121,13 @@ class _SpendingBudgetViewState extends State<SpendingBudgetView> {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
+                        SizedBox(
+                          width: 6,
+                        ),
                         Image.asset(
                           "assets/img/add.png",
-                          width: 12,
-                          height: 12,
+                          width: 16,
+                          height: 16,
                         ),
                       ],
                     ),
